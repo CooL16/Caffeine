@@ -22,7 +22,7 @@
 
 /* Preferences instructions */
 "Caffeine is now running. You can find its icon in the right side of your menu bar. Click it to disable automatic sleep, click it again to enable automatic sleep." = "Caffeine이 실행 중입니다. 메뉴 막대 오른쪽에서 아이콘을 찾을 수 있습니다. 자동 잠자기를 끄려면 클릭하고, 다시 클릭하면 자동 잠자기가 켜집니다.";
-"Right-click (or ⌘-click) the menu bar icon to show the Caffeine menu." = "메뉴 막대 아이콘을 마우스 오른쪽 버튼으로 클릭하거나 ⌘ 키를 누른 채 클릭하면 Caffeine 메뉴가 표시됩니다.";
+"Right-click (or ⌃-click) the menu bar icon to show the Caffeine menu." = "메뉴 막대 아이콘을 마우스 오른쪽 버튼으로 클릭하거나 ⌃ 키를 누른 채 클릭하면 Caffeine 메뉴가 표시됩니다.";
 
 /* Preferences labels */
 "Default duration:" = "기본 지속 시간:";

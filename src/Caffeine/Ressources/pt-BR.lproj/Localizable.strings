@@ -22,7 +22,7 @@
 
 /* Preferences instructions */
 "Caffeine is now running. You can find its icon in the right side of your menu bar. Click it to disable automatic sleep, click it again to enable automatic sleep." = "O Caffeine já está em execução. Você pode encontrar o ícone no lado direito da barra de menus. Clique para desativar o repouso automático e clique novamente para ativá-lo.";
-"Right-click (or ⌘-click) the menu bar icon to show the Caffeine menu." = "Clique com o botão direito (ou pressione ⌘ e clique) no ícone da barra de menus para abrir o menu do Caffeine.";
+"Right-click (or ⌃-click) the menu bar icon to show the Caffeine menu." = "Clique com o botão direito (ou pressione ⌃ e clique) no ícone da barra de menus para abrir o menu do Caffeine.";
 
 /* Preferences labels */
 "Default duration:" = "Duração padrão:";

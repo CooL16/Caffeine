@@ -31,8 +31,9 @@ struct PreferencesView: View {
                         .font(.system(size: 13))
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    Text("Right-click (or ⌘-click) the menu bar icon to show the Caffeine menu.")
+                    Text("Right-click (or ⌃-click) the menu bar icon to show the Caffeine menu.")
                         .font(.system(size: 13, weight: .bold))
+                        .foregroundColor(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
