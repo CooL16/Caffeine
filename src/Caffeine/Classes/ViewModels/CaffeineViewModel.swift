@@ -106,6 +106,7 @@ class CaffeineViewModel: ObservableObject {
         
         isActive = true
         SleepPreventionManager.shared.preventSleep()
+        ActivitySimulator.shared.startMonitoring()
     }
     
     /// Deactivates Caffeine
@@ -114,8 +115,9 @@ class CaffeineViewModel: ObservableObject {
         timeRemaining = nil
         isActive = false
         SleepPreventionManager.shared.allowSleep()
+        ActivitySimulator.shared.stopMonitoring()
     }
-    
+
     /// Returns a formatted string for the remaining time
     func formattedTimeRemaining() -> String? {
         // Only return a status if actually active
