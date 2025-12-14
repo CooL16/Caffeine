@@ -106,9 +106,12 @@ class CaffeineViewModel: ObservableObject {
         
         isActive = true
         SleepPreventionManager.shared.preventSleep()
-        ActivitySimulator.shared.startMonitoring()
+
+        if UserDefaults.standard.bool(forKey: PreferenceKeys.keepAppsActive) {
+            ActivitySimulator.shared.startMonitoring()
+        }
     }
-    
+
     /// Deactivates Caffeine
     func deactivate() {
         cancelTimers()
@@ -116,6 +119,15 @@ class CaffeineViewModel: ObservableObject {
         isActive = false
         SleepPreventionManager.shared.allowSleep()
         ActivitySimulator.shared.stopMonitoring()
+    }
+
+    /// Updates activity simulation based on preference
+    func updateActivitySimulation(enabled: Bool) {
+        if enabled && isActive {
+            ActivitySimulator.shared.startMonitoring()
+        } else {
+            ActivitySimulator.shared.stopMonitoring()
+        }
     }
 
     /// Returns a formatted string for the remaining time
@@ -177,4 +189,5 @@ enum PreferenceKeys {
     static let defaultDuration = "CADefaultDuration"
     static let suppressLaunchMessage = "CASuppressLaunchMessage"
     static let deactivateOnManualSleep = "CADeactivateOnManualSleep"
+    static let keepAppsActive = "CAKeepAppsActive"
 }

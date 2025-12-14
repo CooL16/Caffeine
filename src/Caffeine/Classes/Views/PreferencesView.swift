@@ -13,6 +13,7 @@ struct PreferencesView: View {
     @AppStorage(PreferenceKeys.activateAtLaunch) private var activateAtLaunch = false
     @AppStorage(PreferenceKeys.suppressLaunchMessage) private var suppressLaunchMessage = false
     @AppStorage(PreferenceKeys.deactivateOnManualSleep) private var deactivateOnManualSleep = false
+    @AppStorage(PreferenceKeys.keepAppsActive) private var keepAppsActive = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -75,11 +76,28 @@ struct PreferencesView: View {
                     set: { suppressLaunchMessage = !$0 }
                 ))
                 .font(.system(size: 13))
+
+                Divider()
+                    .padding(.vertical, 4)
+
+                Toggle("Keep apps active", isOn: Binding(
+                    get: { keepAppsActive },
+                    set: { newValue in
+                        keepAppsActive = newValue
+                        viewModel.updateActivitySimulation(enabled: newValue)
+                    }
+                ))
+                .font(.system(size: 13))
+
+                Text("Prevents apps from becoming inactive and the screen saver from starting.")
+                    .font(.system(size: 11))
+                    .foregroundColor(.secondary)
+                    .padding(.leading, 20)
             }
             
             Spacer()
-                .frame(minHeight: 30, maxHeight: .infinity)
-            
+                .frame(height: 30)
+
             // Footer buttons
             HStack {
                 Button(String(localized: "Quit")) {
@@ -99,11 +117,13 @@ struct PreferencesView: View {
             .padding(.bottom, 20)
         }
         .padding(.horizontal, 20)
-        .frame(width: 640, height: 400)
+        .frame(width: 640)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
+
 #Preview {
     PreferencesView(viewModel: CaffeineViewModel())
+        .environment(\.locale, .init(identifier: "en"))
 }
-

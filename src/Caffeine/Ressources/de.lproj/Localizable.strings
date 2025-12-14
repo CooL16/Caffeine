@@ -29,6 +29,8 @@
 "Activate when starting Caffeine" = "Caffeine beim Start aktivieren";
 "Deactivate when device goes to sleep manually" = "Beim manuellen Ruhezustand deaktivieren";
 "Show this message when starting Caffeine" = "Diese Nachricht beim Start von Caffeine anzeigen";
+"Keep apps active" = "Apps aktiv halten";
+"Prevents apps from becoming inactive and the screen saver from starting." = "Verhindert, dass Apps inaktiv werden und der Bildschirmschoner startet.";
 "Close" = "Schließen";
 
 /* Menu additions */
