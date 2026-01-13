@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./framework/bin/generate_appcast release/
+~/bin/sparkle/generate_appcast release/
