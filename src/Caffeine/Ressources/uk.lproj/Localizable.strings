@@ -1,0 +1,45 @@
+/* Activation durations */
+"1 minute" = "1 хвилина";
+"5 minutes" = "5 хвилин";
+"10 minutes" = "10 хвилин";
+"15 minutes" = "15 хвилин";
+"30 minutes" = "30 хвилин";
+"1 hour" = "1 година";
+"2 hours" = "2 години";
+"5 hours" = "5 годин";
+"Indefinitely" = "Назавжди";
+
+/* Status messages */
+"Caffeine is active" = "Caffeine увімкнено";
+"%d minutes" = "%d хвилин";
+"%d seconds" = "%d секунд";
+
+/* Menu items */
+"Check for Updates..." = "Перевірити оновлення...";
+"Preferences..." = "Налаштування...";
+"About Caffeine" = "Про Caffeine";
+"Quit" = "Вихід";
+
+/* Preferences instructions */
+"Caffeine is now running. You can find its icon in the right side of your menu bar. Click it to disable automatic sleep, click it again to enable automatic sleep." = "Caffeine зараз працює. Ви знайдете його іконку праворуч у рядку меню. Натисніть її, щоб вимкнути автоматичний перехід у режим сну; натисніть ще раз, щоб знову дозволити автоматичний перехід у сон.";
+"Right-click (or ⌃-click) the menu bar icon to show the Caffeine menu." = "Клацніть правою кнопкою миші (або ⌃+клік) по іконці в рядку меню, щоб відкрити меню Caffeine.";
+
+/* Preferences labels */
+"Default duration:" = "Тривалість за замовчуванням:";
+"Activate when starting Caffeine" = "Активувати при запуску Caffeine";
+"Deactivate when device goes to sleep manually" = "Вимикати при ручному переході пристрою в режим сну";
+"Show this message when starting Caffeine" = "Показувати це повідомлення при запуску Caffeine";
+"Keep apps active" = "Тримати застосунки активними";
+"Prevents apps from becoming inactive and the screen saver from starting." = "Запобігає неактивності застосунків та запуску заставки.";
+"Close" = "Закрити";
+
+/* Menu additions */
+"Activate for" = "Активувати на";
+"Welcome to Caffeine" = "Ласкаво просимо в Caffeine";
+
+/* About credits */
+"© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nSource code:\nhttps://github.caffeine-app.net" = "© 2006 Tomas Franzén\n© 2018 Michael Jones\n© 2022 Dominic Rodemer\n\nВихідний код:\nhttps://github.caffeine-app.net";
+
+/* System messages */
+"Caffeine prevents sleep" = "Caffeine запобігає переходу в режим сну";
+
