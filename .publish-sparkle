@@ -4,7 +4,7 @@ s3_bucket: dr-caffeine-mac
 release_dir: sparkle/release
 signing_account: ed25519
 generate_appcast: "~/bin/sparkle/generate_appcast"
-editor: nvim
+editor: nova --wait
 aws_region: eu-central-1
 git_tag: true
 tag_prefix: v
