@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2C0201C2EC4888D006B4FA8 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C0201A2EC48889006B4FA8 /* Sparkle.framework */; };
-		F2C0201D2EC4888D006B4FA8 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F2C0201A2EC48889006B4FA8 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F26346032F27633300C56D92 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F26346022F27633300C56D92 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +17,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F2C0201D2EC4888D006B4FA8 /* Sparkle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -26,7 +24,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F2C0201A2EC48889006B4FA8 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../sparkle/framework/Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		F2F53BA42EC354AE008A08B6 /* Caffeine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caffeine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,25 +53,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C0201C2EC4888D006B4FA8 /* Sparkle.framework in Frameworks */,
+				F26346032F27633300C56D92 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F2C020192EC487D6006B4FA8 /* Sparkle */ = {
-			isa = PBXGroup;
-			children = (
-				F2C0201A2EC48889006B4FA8 /* Sparkle.framework */,
-			);
-			name = Sparkle;
-			sourceTree = "<group>";
-		};
 		F2F53B9B2EC354AE008A08B6 = {
 			isa = PBXGroup;
 			children = (
-				F2C020192EC487D6006B4FA8 /* Sparkle */,
 				F2F53BA62EC354AE008A08B6 /* Caffeine */,
 				F2F53BA52EC354AE008A08B6 /* Products */,
 			);
@@ -109,6 +97,7 @@
 			);
 			name = Caffeine;
 			packageProductDependencies = (
+				F26346022F27633300C56D92 /* Sparkle */,
 			);
 			productName = Caffeine;
 			productReference = F2F53BA42EC354AE008A08B6 /* Caffeine.app */;
@@ -122,7 +111,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2610;
-				LastUpgradeCheck = 2610;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					F2F53BA32EC354AE008A08B6 = {
 						CreatedOnToolsVersion = 26.1;
@@ -149,6 +138,9 @@
 			);
 			mainGroup = F2F53B9B2EC354AE008A08B6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F26346012F27633300C56D92 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F2F53BA52EC354AE008A08B6 /* Products */;
 			projectDirPath = "";
@@ -304,7 +296,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Caffeine/Ressources/Caffeine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -314,10 +305,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../sparkle/framework",
-				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caffeine/Ressources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -344,7 +331,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Caffeine/Ressources/Caffeine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -354,10 +340,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../sparkle/framework",
-				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caffeine/Ressources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -402,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F26346012F27633300C56D92 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F26346022F27633300C56D92 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F26346012F27633300C56D92 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2F53B9C2EC354AE008A08B6 /* Project object */;
 }
