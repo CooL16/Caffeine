@@ -50,6 +50,10 @@ final class ActivitySimulator {
         checkTimer = nil
     }
 
+    /// Triggers the Accessibility permission prompt by posting a CGEvent
+    func requestPermission() {
+        simulateActivity()
+    }
 
     // MARK: - Private Methods
 
@@ -85,27 +89,24 @@ final class ActivitySimulator {
         let idleTime = dict["HIDIdleTime"] as? Int64 else { return 0 }
 
         // HIDIdleTime is in nanoseconds
-        let systemIdleTime = TimeInterval(idleTime) / 1_000_000_000
-        //print(systemIdleTime)
-        
-        return systemIdleTime
+        return TimeInterval(idleTime) / 1_000_000_000
     }
 
     private func simulateActivity() {
-        // Get current mouse position using NSEvent (no permissions required)
+        // Get current mouse position
         let currentPos = NSEvent.mouseLocation
 
-        // Convert from bottom-left origin (NSEvent) to top-left origin (CGWarpMouseCursorPosition)
+        // Convert from bottom-left origin (NSEvent) to top-left origin (CGEvent)
         guard let screenHeight = NSScreen.main?.frame.height else { return }
         let cgPoint = CGPoint(x: currentPos.x, y: screenHeight - currentPos.y)
 
-        // Move 1 pixel right, then back to original position
-        // CGWarpMouseCursorPosition works without Accessibility permission
-        let newPos = CGPoint(x: cgPoint.x + 1, y: cgPoint.y)
-        CGWarpMouseCursorPosition(newPos)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            CGWarpMouseCursorPosition(cgPoint)
+        // CGEvent generates actual HID events that reset the system idle timer
+        // CGWarpMouseCursorPosition does NOT reset HIDIdleTime as it bypasses HID
+        if let moveEvent = CGEvent(mouseEventSource: nil,
+                                   mouseType: .mouseMoved,
+                                   mouseCursorPosition: cgPoint,
+                                   mouseButton: .left) {
+            moveEvent.post(tap: .cghidEventTap)
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import ApplicationServices
 
 /// Main view model for the Caffeine application
 @MainActor
@@ -123,6 +124,12 @@ class CaffeineViewModel: ObservableObject {
 
     /// Updates activity simulation based on preference
     func updateActivitySimulation(enabled: Bool) {
+        if enabled {
+            // Trigger the Accessibility permission prompt by posting a no-op event
+            // This prompts for "Events" permission which CGEvent.post requires
+            ActivitySimulator.shared.requestPermission()
+        }
+
         if enabled && isActive {
             ActivitySimulator.shared.startMonitoring()
         } else {
