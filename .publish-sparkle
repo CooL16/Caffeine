@@ -45,12 +45,15 @@ post_publish_template: |
       APP_TARGET => "tahoe",
       APP_HIDDEN => false
   )
-  ---
-  Update '~/Sites/Online/caffeine-app.net/www/website/config/apps.config.php'
 
 # Post-publish commands (optional)
 # Shell commands executed sequentially after publish.
-# Stops on first failure. No placeholder substitution.
-# post_publish_commands:
-#   - git push origin --tags
-#   - ./scripts/notify-slack.sh
+# Stops on first failure.
+# Available: {{app_name}}, {{version}}, {{size}}, {{url}}, {{zip_name}}
+post_publish_commands:
+  - nova --wait ~/Sites/Online/caffeine-app.net/www/website/config/apps.config.php
+  - git -C ~/Sites/Online/caffeine-app.net add www/website/config/apps.config.php && git -C ~/Sites/Online/caffeine-app.net commit -m "Release {{version}}"
+  - git -C ~/Sites/Online/caffeine-app.net push origin
+  - transmit www.caffeine-app.net
+  - gh release create v{{version}} sparkle/release/{{zip_name}} --title "{{app_name}} {{version}}" --notes-file sparkle/release/{{app_name}}_{{version}}.html -R domzilla/Caffeine
+  - echo "Release {{version}} complete"
