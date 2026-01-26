@@ -1,0 +1,27 @@
+---
+app_name: Caffeine
+s3_bucket: dr-caffeine-mac
+release_dir: sparkle/release
+signing_account: ed25519
+generate_appcast: "~/bin/sparkle/generate_appcast"
+editor: nvim
+aws_region: eu-central-1
+git_tag: true
+tag_prefix: v
+post_publish_template: |
+  	array(
+		APP_NAME => "Caffeine",
+		APP_TITLE => _("Caffeine"),
+		APP_VERSION => "{{version}}",
+		APP_SIZE => "{{size}}",
+		APP_IMAGES => "/images/tahoe",
+		APP_TINT => "#4696c4",
+		APP_TINT_HIGHLIGHT => "#3b85b0",
+		APP_URL => "{{url}}",
+		DOWNLOAD_URL => "/download/tahoe/",
+		APP_OS => $__OS_macOS,
+		APP_TARGET => "tahoe",
+		APP_HIDDEN => false
+	)
+  ---
+  Update '~/Sites/Online/caffeine-app.net/www/website/config/apps.config.php'
