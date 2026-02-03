@@ -22,7 +22,7 @@ src/
         ├── Assets.xcassets/
         ├── Info.plist
         ├── Caffeine.entitlements
-        └── *.lproj/                 # Localizations (12 languages)
+        └── *.lproj/                 # Localizations (13 languages)
 ```
 
 ## Tech Stack
@@ -51,8 +51,8 @@ MVVM pattern:
 
 ## Localization
 
-12 supported languages in `Ressources/*.lproj/Localizable.strings`:
-- English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Portuguese, Portuguese (Brazil), Russian, Chinese (Simplified)
+13 supported languages in `Ressources/*.lproj/Localizable.strings`:
+- English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Portuguese, Portuguese (Brazil), Russian, Ukrainian, Chinese (Simplified)
 
 When updating user-facing strings:
 1. Update the source code
